@@ -1,5 +1,6 @@
 import { Search, Shield, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BASE } from "@/lib/api";
 
 const HeroSection = () => {
   return (
@@ -46,11 +47,24 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-200">
-            <Button variant="hero" size="xl">
+            <Button
+              variant="hero"
+              size="xl"
+              onClick={() => {
+                const el = document.getElementById("research");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
               Begin Research
               <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
-            <Button variant="hero-outline" size="xl">
+            <Button
+              variant="hero-outline"
+              size="xl"
+              onClick={() => {
+                window.open(`${BASE}/docs`, "_blank");
+              }}
+            >
               View Documentation
             </Button>
           </div>

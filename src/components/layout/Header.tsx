@@ -35,7 +35,14 @@ const Header = () => {
             <a href="#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm font-medium">
               About
             </a>
-            <Button variant="gold" size="sm">
+            <Button
+              variant="gold"
+              size="sm"
+              onClick={() => {
+                const el = document.getElementById("research");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
               Start Query
             </Button>
           </nav>
@@ -64,7 +71,16 @@ const Header = () => {
               <a href="#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm font-medium">
                 About
               </a>
-              <Button variant="gold" size="sm" className="w-full mt-2">
+              <Button
+                variant="gold"
+                size="sm"
+                className="w-full mt-2"
+                onClick={() => {
+                  const el = document.getElementById("research");
+                  el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Start Query
               </Button>
             </div>

@@ -102,7 +102,13 @@ const EvidenceBoard = () => {
                         {doc.source}
                       </span>
                     </div>
-                    <button className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-secondary transition-colors">
+                    <button
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-secondary transition-colors"
+                      onClick={() => {
+                        const q = encodeURIComponent(doc.title);
+                        window.open(`https://www.google.com/search?q=${q}`, "_blank");
+                      }}
+                    >
                       View Full Document
                       <ExternalLink className="w-3.5 h-3.5" />
                     </button>
